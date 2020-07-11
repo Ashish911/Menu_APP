@@ -20,7 +20,7 @@
 
     <Button
         android:drawableRight="@drawable/ic_arrow_forward_black_24dp"
-        android:drawableTint="@color/gradient_start_color"
+        android:drawableTint="@color/button_color"
         android:textColor="@color/button_color"
         android:background="#fff"
         android:id="@+id/btn_Next"
