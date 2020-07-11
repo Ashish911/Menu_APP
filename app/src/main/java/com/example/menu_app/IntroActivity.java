@@ -45,6 +45,7 @@ public class IntroActivity extends AppCompatActivity {
         tabIndicator = findViewById(R.id.tab_indicator);
         btnNext = findViewById(R.id.btn_Next);
         btnGetStarted = findViewById(R.id.btn_getStarted);
+        tvSkip = findViewById(R.id.tvSkip);
         btnAnimation = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.btn_animation);
 
         //filling the view pager
