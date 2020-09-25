@@ -17,7 +17,6 @@
         android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
         <activity android:name=".LoadingScreenActivity"></activity>
-        <activity android:name=".CustomerScreenActivity" />
         <activity android:name=".Splash_ScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
