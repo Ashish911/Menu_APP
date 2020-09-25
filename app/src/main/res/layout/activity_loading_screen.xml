@@ -5,9 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/loading_screen"
-    tools:context=".CustomerScreenActivity">
-
-
+    tools:context=".LoadingScreenActivity">
+    
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -50,6 +49,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     app:srcCompat="@drawable/waiter" />
+
+                <ImageButton
+                    android:id="@+id/dashboard"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/btn_loading"
+                    app:srcCompat="@drawable/ic_arrow_forward_black_24dp"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="349dp"
+                    tools:layout_editor_absoluteY="401dp" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
