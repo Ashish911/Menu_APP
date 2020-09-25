@@ -17,6 +17,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".WaiterDashboardActivity"></activity>
+        <activity android:name=".ChiefDashboardActivity" />
         <activity android:name=".LoadingScreenActivity" />
         <activity android:name=".Splash_ScreenActivity">
             <intent-filter>
