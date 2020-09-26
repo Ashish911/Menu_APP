@@ -15,24 +15,24 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/homefoodpic"
+                android:id="@+id/FoodInCategory"
                 app:srcCompat="@drawable/ic_launcher_background"
                 android:layout_width="150dp"
                 android:layout_height="150dp"/>
 
             <TextView
-                android:id="@+id/tvHomeFoodName"
+                android:id="@+id/tvInsideFoodName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Food Name"
-                android:layout_below="@+id/homefoodpic"/>
+                android:text="Medicine Name"
+                android:layout_below="@+id/FoodInCategory"/>
 
             <TextView
-                android:id="@+id/tvHomeFoodPrice"
+                android:id="@+id/tvInsideFoodPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Rs.2000"
-                android:layout_below="@+id/tvHomeFoodName"/>
+                android:layout_below="@+id/tvInsideFoodName"/>
 
         </RelativeLayout>
 

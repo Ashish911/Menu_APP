@@ -17,7 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".CustomerHomeScreenActivity"></activity>
+        <activity android:name=".FoodDisplayActivity"></activity>
+        <activity android:name=".CategoryActivity" />
+        <activity android:name=".CustomerHomeScreenActivity" />
         <activity android:name=".WaiterDashboardActivity" />
         <activity android:name=".ChiefDashboardActivity" />
         <activity android:name=".LoadingScreenActivity" />
