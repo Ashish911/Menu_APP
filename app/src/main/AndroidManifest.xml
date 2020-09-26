@@ -17,7 +17,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".WaiterDashboardActivity"></activity>
+        <activity android:name=".CustomerHomeScreenActivity"></activity>
+        <activity android:name=".WaiterDashboardActivity" />
         <activity android:name=".ChiefDashboardActivity" />
         <activity android:name=".LoadingScreenActivity" />
         <activity android:name=".Splash_ScreenActivity">
@@ -29,6 +30,10 @@
         </activity>
         <activity android:name=".IntroActivity" />
         <activity android:name=".MainActivity" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
