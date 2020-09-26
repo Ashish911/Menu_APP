@@ -1,9 +1,18 @@
 package com.example.menu_app.serverresponse;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 public class SignUpResponse {
 
+    @SerializedName("userid")
+    @Expose
     private String userid;
+    @SerializedName("status")
+    @Expose
     private String status;
+    @SerializedName("token")
+    @Expose
     private String token;
 
     public String getUserid() {
