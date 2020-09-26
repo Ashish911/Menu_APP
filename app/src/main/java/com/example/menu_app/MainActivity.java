@@ -60,6 +60,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        tvcustomer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, CustomerHomeScreenActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
     }
 
     private void SaveUsernamePassword(){
