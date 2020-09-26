@@ -15,7 +15,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/homefoodpic"
+                android:id="@+id/HomeFoodPic"
                 app:srcCompat="@drawable/ic_launcher_background"
                 android:layout_width="150dp"
                 android:layout_height="150dp"/>
@@ -25,7 +25,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Food Name"
-                android:layout_below="@+id/homefoodpic"/>
+                android:layout_below="@+id/HomeFoodPic"/>
 
             <TextView
                 android:id="@+id/tvHomeFoodPrice"
