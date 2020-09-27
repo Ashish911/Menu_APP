@@ -8,7 +8,7 @@
 
     <include
         android:id="@+id/foodToolbar"
-        layout="@layout/category_toolbar"/>
+        layout="@layout/food_display_bar"/>
 
     <ScrollView
         android:id="@+id/foodDetails"

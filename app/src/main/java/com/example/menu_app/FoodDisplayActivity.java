@@ -16,7 +16,7 @@ import com.squareup.picasso.Picasso;
 
 public class FoodDisplayActivity extends AppCompatActivity {
 
-    private TextView tvName, tvPrice, tag1, tag2, tvDescription;
+    private TextView tvName, tvPrice, tag1, tag2, tvDescription, tvFoodDisplay;
     private ImageView imgFood;
     private Button btnOrder;
 
@@ -31,6 +31,7 @@ public class FoodDisplayActivity extends AppCompatActivity {
         tag2 = findViewById(R.id.tag2);
         imgFood = findViewById(R.id.displayFoodImage);
         tvDescription = findViewById(R.id.tvFoodDescription);
+        tvFoodDisplay = findViewById(R.id.tvFoodBuy);
 
         Intent intent = getIntent();
         final String Name = intent.getExtras().getString("Name");
@@ -42,6 +43,7 @@ public class FoodDisplayActivity extends AppCompatActivity {
         final String Description = intent.getExtras().getString("Description");
 
         tvName.setText(Name);
+        tvFoodDisplay.setText(Name);
         tag1.setText(Tag1);
         tag2.setText(Tag2);
         tvDescription.setText(Description);
