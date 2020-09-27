@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".OrderActivity">
+
+    <include layout="@layout/order_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="112dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/orderFoodName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="FoodName"
+                android:textSize="20dp"
+                android:fontFamily="@font/archivo_narrow"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/orderFoodPrice"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="$ 50"
+                android:textSize="24dp"
+                android:textColor="@color/orangize"
+                android:fontFamily="@font/archivo_narrow"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Quantity"
+                android:layout_marginTop="5dp"
+                android:textSize="18dp"
+                android:fontFamily="@font/archivo_narrow"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/imageMinus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/minus"/>
+
+                <TextView
+                    android:id="@+id/Quantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:textSize="14dp"
+                    android:background="@drawable/quantity_background"/>
+
+                <ImageButton
+                    android:id="@+id/imagePlus"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/plus"/>
+
+            </LinearLayout>
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/OrderImage"
+            android:layout_marginLeft="30dp"
+            android:layout_width="165dp"
+            android:layout_height="165dp"
+            android:src="@drawable/pizza"/>
+    </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/line"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Full Name"
+            android:textSize="14dp"
+            android:layout_marginTop="10dp"/>
+
+        <EditText
+            android:id="@+id/FullName"
+            android:layout_width="200dp"
+            android:layout_height="29dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/gray"
+            android:background="@drawable/textbox_background"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Table Name"
+            android:textSize="14dp"
+            android:layout_marginTop="10dp"/>
+
+        <EditText
+            android:id="@+id/TableName"
+            android:layout_width="50dp"
+            android:layout_height="29dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/gray"
+            android:background="@drawable/textbox_background"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/line"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Amount Details"
+            android:textSize="18dp"
+            android:layout_marginTop="10dp"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:text="Food Charge"
+                android:textSize="14dp"/>
+
+            <TextView
+                android:id="@+id/OrderPrice"
+                android:layout_width="152dp"
+                android:layout_height="wrap_content"
+                android:text="$ 50"
+                android:textStyle="bold"
+                android:gravity="end"
+                android:textColor="@color/orangize"
+                android:textSize="14dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:text="Quantity"
+                android:textSize="14dp"/>
+
+            <TextView
+                android:id="@+id/OrderQuantity"
+                android:layout_width="152dp"
+                android:layout_height="wrap_content"
+                android:text="2"
+                android:textStyle="bold"
+                android:gravity="end"
+                android:textColor="@color/orange"
+                android:textSize="14dp"/>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/line"
+            android:layout_marginTop="10dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:text="Total"
+                android:textSize="18dp"/>
+
+            <TextView
+                android:id="@+id/TotalPrice"
+                android:layout_width="152dp"
+                android:layout_height="wrap_content"
+                android:text="$100"
+                android:gravity="end"
+                android:textStyle="bold"
+                android:textColor="@color/orange"
+                android:textSize="14dp"/>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/line"
+            android:layout_marginTop="10dp"/>
+
+        <Button
+            android:id="@+id/btnProceed"
+            android:layout_width="272dp"
+            android:layout_height="60dp"
+            android:text="Proceed"
+            android:textColor="@color/white"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/proceed_background"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+</LinearLayout>
