@@ -5,8 +5,11 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.menu_app.adapter.CategoryAdapter;
@@ -31,6 +34,7 @@ public class CustomerHomeScreenActivity extends AppCompatActivity {
 
     SliderView sliderView;
     RecyclerView categoryRecyclerView, foodRecyclerView;
+    ImageButton Search;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +44,7 @@ public class CustomerHomeScreenActivity extends AppCompatActivity {
         sliderView = findViewById(R.id.Slider);
         categoryRecyclerView = findViewById(R.id.categoryRecyclerView);
         foodRecyclerView = findViewById(R.id.foodRecycleView);
+        Search = findViewById(R.id.searchfood);
 
 
         final SliderAdapter adapter = new SliderAdapter(getBaseContext());
@@ -51,6 +56,14 @@ public class CustomerHomeScreenActivity extends AppCompatActivity {
         sliderView.setIndicatorSelectedColor(Color.WHITE);
         sliderView.setIndicatorUnselectedColor(Color.GRAY);
         sliderView.startAutoCycle();
+
+        Search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CustomerHomeScreenActivity.this, SearchActivity.class);
+                startActivity(intent);
+            }
+        });
 
         getCategory();
         getFoods();
