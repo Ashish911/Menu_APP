@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.content.Intent;
 import android.nfc.Tag;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -32,8 +33,9 @@ public class FoodDisplayActivity extends AppCompatActivity {
         imgFood = findViewById(R.id.displayFoodImage);
         tvDescription = findViewById(R.id.tvFoodDescription);
         tvFoodDisplay = findViewById(R.id.tvFoodBuy);
+        btnOrder = findViewById(R.id.buyBtn);
 
-        Intent intent = getIntent();
+        final Intent intent = getIntent();
         final String Name = intent.getExtras().getString("Name");
         final String Price = intent.getExtras().getString("Price");
         final String img = intent.getExtras().getString("Image");
@@ -50,6 +52,16 @@ public class FoodDisplayActivity extends AppCompatActivity {
         tvPrice.setText("RS " + Price);
         Picasso.get().load(Url.base_url_image + img).into(imgFood);
 
+        btnOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(FoodDisplayActivity.this, OrderActivity.class);
+                intent1.putExtra("name", Name);
+                intent1.putExtra("price", Price);
+                intent1.putExtra("image", img);
+                startActivity(intent1);
+            }
+        });
 
     }
 }

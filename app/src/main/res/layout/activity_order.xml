@@ -154,11 +154,12 @@
 
             <TextView
                 android:id="@+id/OrderPrice"
-                android:layout_width="152dp"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:text="$ 50"
                 android:textStyle="bold"
                 android:gravity="end"
+                android:layout_marginRight="20dp"
                 android:textColor="@color/orangize"
                 android:textSize="14dp"/>
         </LinearLayout>
@@ -176,11 +177,12 @@
 
             <TextView
                 android:id="@+id/OrderQuantity"
-                android:layout_width="152dp"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:text="2"
                 android:textStyle="bold"
                 android:gravity="end"
+                android:layout_marginRight="20dp"
                 android:textColor="@color/orange"
                 android:textSize="14dp"/>
         </LinearLayout>
@@ -205,10 +207,11 @@
 
             <TextView
                 android:id="@+id/TotalPrice"
-                android:layout_width="152dp"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:text="$100"
                 android:gravity="end"
+                android:layout_marginRight="20dp"
                 android:textStyle="bold"
                 android:textColor="@color/orange"
                 android:textSize="14dp"/>
