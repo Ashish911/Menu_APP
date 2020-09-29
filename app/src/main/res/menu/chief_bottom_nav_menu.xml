@@ -7,11 +7,6 @@
         android:title="Orders" />
 
     <item
-        android:id="@+id/navigation_completed"
-        android:icon="@drawable/ic_success"
-        android:title="Completed" />
-
-    <item
         android:id="@+id/navigation_account"
         android:icon="@drawable/ic_account_circle_black_24dp"
         android:title="Account" />
