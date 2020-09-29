@@ -1,6 +1,13 @@
 package com.example.menu_app.model;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 public class Order {
+
+    @SerializedName("_id")
+    @Expose
+    private String id;
 
     private String FoodName;
     private String FoodImage;
@@ -20,6 +27,14 @@ public class Order {
         TableName = tableName;
         this.isConfirmed = isConfirmed;
         this.isCompleted = isCompleted;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getFoodName() {
