@@ -48,17 +48,23 @@
                     android:id="@+id/waiterPic"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:srcCompat="@drawable/waiter" />
+                    app:srcCompat="@drawable/waiter"
+                    tools:layout_editor_absoluteX="65dp"
+                    tools:layout_editor_absoluteY="16dp" />
 
                 <ImageButton
                     android:id="@+id/dashboard"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:background="@drawable/btn_loading"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.955"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.959"
                     app:srcCompat="@drawable/ic_arrow_forward_black_24dp"
-                    tools:ignore="MissingConstraints"
-                    tools:layout_editor_absoluteX="349dp"
-                    tools:layout_editor_absoluteY="401dp" />
+                    tools:ignore="MissingConstraints" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

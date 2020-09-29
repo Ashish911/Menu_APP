@@ -2,8 +2,10 @@ package com.example.menu_app;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,6 +22,7 @@ public class LoadingScreenActivity extends AppCompatActivity {
 
     TextView tvUserType, tvUsername;
     ImageView ivChief, ivWaiter;
+    ImageButton btnDashboard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +33,7 @@ public class LoadingScreenActivity extends AppCompatActivity {
         tvUsername = findViewById(R.id.userName);
         ivChief = findViewById(R.id.chiefPic);
         ivWaiter = findViewById(R.id.waiterPic);
+        btnDashboard = findViewById(R.id.dashboard);
 
         UsersAPI usersAPI = Url.getInstance().create(UsersAPI.class);
         final Call<Users> usersCall = usersAPI.getUserDetails(Url.token);
@@ -42,10 +46,25 @@ public class LoadingScreenActivity extends AppCompatActivity {
                         tvUserType.setText("Welcome Chief");
                         ivWaiter.setVisibility(View.INVISIBLE);
                         tvUsername.setText(response.body().getUserName());
+                        btnDashboard.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent intent = new Intent(LoadingScreenActivity.this, ChiefDashboardActivity.class);
+                                startActivity(intent);
+                            }
+                        });
+
                     } else if (response.body().isWaiter() == true){
                         tvUserType.setText("Welcome Waiter");
                         ivChief.setVisibility(View.INVISIBLE);
                         tvUsername.setText(response.body().getUserName());
+                        btnDashboard.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent intent = new Intent(LoadingScreenActivity.this, WaiterDashboardActivity.class);
+                                startActivity(intent);
+                            }
+                        });
                     }
                     return;
                 }
