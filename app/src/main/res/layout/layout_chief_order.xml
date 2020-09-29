@@ -18,7 +18,7 @@
 
 
             <ImageView
-                android:id="@+id/OrderedImage"
+                android:id="@+id/ChiefOrderedImage"
                 android:layout_width="97dp"
                 android:layout_height="100dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -30,7 +30,7 @@
                 app:srcCompat="@drawable/food" />
 
             <TextView
-                android:id="@+id/OrderedFoodName"
+                android:id="@+id/ChiefOrderedFoodName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -39,12 +39,12 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.114"
-                app:layout_constraintStart_toEndOf="@+id/OrderedImage"
+                app:layout_constraintStart_toEndOf="@+id/ChiefOrderedImage"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.044" />
 
             <TextView
-                android:id="@+id/OrderedQuantity"
+                android:id="@+id/ChiefOrderedQuantity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Quantity"
@@ -52,54 +52,42 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.114"
-                app:layout_constraintStart_toEndOf="@+id/OrderedImage"
+                app:layout_constraintStart_toEndOf="@+id/ChiefOrderedImage"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <Button
-                android:id="@+id/OrderConfirm"
-                android:layout_width="80dp"
-                android:layout_height="28dp"
-                android:background="@drawable/order_btn_background"
-                android:text="Confirm"
-                android:textColor="@color/white"
-                android:textSize="14dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.459"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.9" />
-
             <TextView
-                android:id="@+id/OrderWaiterConfirm"
-                android:layout_width="80dp"
+                android:id="@+id/OrderChiefCompleted"
+                android:layout_width="144dp"
                 android:layout_height="28dp"
                 android:background="@drawable/green_background"
-                android:text="Confirm"
+                android:text="Completed"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="14dp"
                 android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.177"
+                app:layout_constraintStart_toEndOf="@+id/ChiefOrderedImage"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.92" />
+            <Button
+                android:id="@+id/OrderCompleted"
+                android:layout_width="144dp"
+                android:layout_height="28dp"
+                android:background="@drawable/order_btn_background"
+                android:text="Completed"
+                android:textAlignment="center"
+                android:gravity="center"
                 android:textColor="@color/white"
                 android:textSize="14dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.459"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintHorizontal_bias="0.177"
+                app:layout_constraintStart_toEndOf="@+id/ChiefOrderedImage"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.9" />
-
-            <ImageButton
-                android:id="@+id/OrderRemove"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="24dp"
-                android:background="#f2f2f2"
-                android:src="@drawable/cross"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintVertical_bias="0.92" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
