@@ -10,11 +10,13 @@ public class Users {
     private boolean isWaiter;
     private boolean isChief;
 
-    public Users(String fullName, String userName, String email, String phoneNo) {
+    public Users(String fullName, String userName, String email, String phoneNo, boolean IsWaiter, boolean IsChief) {
         FullName = fullName;
         UserName = userName;
         Email = email;
         PhoneNo = phoneNo;
+        isWaiter = IsWaiter;
+        isChief = IsChief;
     }
 
     public Users(String fullName, String userName, String email, String phoneNo, String password) {

@@ -54,6 +54,9 @@ public class CompletedOrderAdapter extends RecyclerView.Adapter<CompletedOrderAd
             holder.FullName.setText("For " + order.getFullName());
         } else {
             holder.FoodName.setVisibility(View.INVISIBLE);
+            holder.Quantity.setVisibility(View.INVISIBLE);
+            holder.FullName.setVisibility(View.INVISIBLE);
+            holder.FoodImage.setVisibility(View.INVISIBLE);
         }
     }
 

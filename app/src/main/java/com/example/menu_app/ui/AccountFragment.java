@@ -17,6 +17,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.menu_app.AboutUsActivity;
+import com.example.menu_app.EditProfileActivity;
+import com.example.menu_app.HelpActivity;
 import com.example.menu_app.MainActivity;
 import com.example.menu_app.R;
 import com.example.menu_app.api.UsersAPI;
@@ -57,6 +60,30 @@ public class AccountFragment extends Fragment {
         imgChief = view.findViewById(R.id.imageChief);
         imgWaiter = view.findViewById(R.id.imageWaiter);
         editprofile = view.findViewById(R.id.editProfile);
+
+        editprofile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), EditProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Aboutus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), AboutUsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), HelpActivity.class);
+                startActivity(intent);
+            }
+        });
 
         Logout.setOnClickListener(new View.OnClickListener() {
             @Override
