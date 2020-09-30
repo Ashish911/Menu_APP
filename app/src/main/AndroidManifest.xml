@@ -20,7 +20,6 @@
         <activity android:name=".EditProfileActivity"></activity>
         <activity android:name=".HelpActivity" />
         <activity android:name=".AboutUsActivity" />
-        <activity android:name=".CompletedSearchActivity" />
         <activity android:name=".OrderSearchActivity" />
         <activity android:name=".SearchActivity" />
         <activity android:name=".OrderActivity" />
