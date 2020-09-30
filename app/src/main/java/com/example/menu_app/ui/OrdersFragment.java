@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -60,13 +61,13 @@ public class OrdersFragment extends Fragment {
             @Override
             public void onResponse(Call<Users> call, Response<Users> response) {
                 if (response.isSuccessful()){
-                    OrderAPI orderAPI = Url.getInstance().create(OrderAPI.class);
-                    Call<List<Order>> listCall = orderAPI.getorder();
                     if (response.body().isWaiter() == true){
+                        OrderAPI orderAPI = Url.getInstance().create(OrderAPI.class);
+                        Call<List<Order>> listCall = orderAPI.getOrder();
                         listCall.enqueue(new Callback<List<Order>>() {
                             @Override
                             public void onResponse(Call<List<Order>> call, Response<List<Order>> response) {
-                                OrderAdapter orderAdapter = new OrderAdapter(getActivity(),response.body());
+                                OrderAdapter orderAdapter = new OrderAdapter(response.body(),getActivity());
                                 recyclerView.setAdapter(orderAdapter);
                                 recyclerView.setHasFixedSize(true);
                                 recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -79,10 +80,12 @@ public class OrdersFragment extends Fragment {
                             }
                         });
                     } else if (response.body().isChief() == true){
+                        OrderAPI orderAPI = Url.getInstance().create(OrderAPI.class);
+                        Call<List<Order>> listCall = orderAPI.getOrder();
                         listCall.enqueue(new Callback<List<Order>>() {
                             @Override
                             public void onResponse(Call<List<Order>> call, Response<List<Order>> response) {
-                                ChiefOrderAdapter chiefOrderAdapter = new ChiefOrderAdapter(getActivity(), response.body());
+                                ChiefOrderAdapter chiefOrderAdapter = new ChiefOrderAdapter(response.body(), getActivity());
                                 recyclerView.setAdapter(chiefOrderAdapter);
                                 recyclerView.setHasFixedSize(true);
                                 recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));

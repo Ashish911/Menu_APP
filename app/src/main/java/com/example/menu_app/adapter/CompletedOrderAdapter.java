@@ -23,18 +23,19 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class CompletedOrderAdapter extends RecyclerView.Adapter<CompletedOrderAdapter.ViewHolder>{
 
-    private Context context;
     private List<Order> orderList;
+    private Context context;
 
-    public CompletedOrderAdapter(Context context, List<Order> orderList) {
-        this.context = context;
+
+    public CompletedOrderAdapter(List<Order> orderList, Context context) {
         this.orderList = orderList;
+        this.context = context;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_completed,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_completed,null);
         return new ViewHolder(view);
     }
 
@@ -44,8 +45,6 @@ public class CompletedOrderAdapter extends RecyclerView.Adapter<CompletedOrderAd
 
         final boolean confirmed = order.isConfirmed();
         final boolean completed = order.isCompleted();
-
-        Toast.makeText(context, "" + completed, Toast.LENGTH_SHORT).show();
 
         if (confirmed == true && completed == true){
             Picasso.get().load(Url.base_url_image + orderList.get(position).getFoodImage()).into(holder.FoodImage);
@@ -57,6 +56,7 @@ public class CompletedOrderAdapter extends RecyclerView.Adapter<CompletedOrderAd
             holder.Quantity.setVisibility(View.INVISIBLE);
             holder.FullName.setVisibility(View.INVISIBLE);
             holder.FoodImage.setVisibility(View.INVISIBLE);
+            holder.completed.setVisibility(View.INVISIBLE);
         }
     }
 

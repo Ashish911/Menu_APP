@@ -2,12 +2,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_order"
+        android:id="@+id/navigation_orderC"
         android:icon="@drawable/ic_checklist"
         android:title="Orders" />
 
     <item
-        android:id="@+id/navigation_account"
+        android:id="@+id/navigation_accountC"
         android:icon="@drawable/ic_account_circle_black_24dp"
         android:title="Account" />
 

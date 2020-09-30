@@ -20,7 +20,7 @@ public interface OrderAPI {
     Call<Void> order(@Body Order order);
 
     @GET("order")
-    Call<List<Order>> getorder();
+    Call<List<Order>> getOrder();
 
     @DELETE("order/{id}")
     Call<Void> removeOrder(@Path("id") String id);

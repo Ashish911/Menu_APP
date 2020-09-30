@@ -48,11 +48,11 @@ public class CompletedFragment extends Fragment {
 
 
         OrderAPI orderAPI = Url.getInstance().create(OrderAPI.class);
-        Call<List<Order>> listCall = orderAPI.getorder();
+        Call<List<Order>> listCall = orderAPI.getOrder();
         listCall.enqueue(new Callback<List<Order>>() {
             @Override
             public void onResponse(Call<List<Order>> call, Response<List<Order>> response) {
-                CompletedOrderAdapter completedOrderAdapter = new CompletedOrderAdapter(getActivity(), response.body());
+                CompletedOrderAdapter completedOrderAdapter = new CompletedOrderAdapter(response.body(),getActivity());
                 recyclerView.setAdapter(completedOrderAdapter);
                 recyclerView.setHasFixedSize(true);
                 recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));

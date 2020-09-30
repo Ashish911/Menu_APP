@@ -29,18 +29,18 @@ import retrofit2.Response;
 
 public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder>{
 
-    private Context context;
     private List<Order> orderList;
+    private Context context;
 
-    public OrderAdapter(Context context, List<Order> orderList) {
-        this.context = context;
+    public OrderAdapter(List<Order> orderList, Context context) {
         this.orderList = orderList;
+        this.context = context;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_order,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_order, null);
         return new ViewHolder(view);
     }
 

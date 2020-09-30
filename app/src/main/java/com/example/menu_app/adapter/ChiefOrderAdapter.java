@@ -14,6 +14,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.menu_app.ChiefDashboardActivity;
 import com.example.menu_app.R;
 import com.example.menu_app.WaiterDashboardActivity;
 import com.example.menu_app.api.OrderAPI;
@@ -29,18 +30,18 @@ import retrofit2.Response;
 
 public class ChiefOrderAdapter extends RecyclerView.Adapter<ChiefOrderAdapter.ViewHolder>{
 
-    private Context context;
     private List<Order> orderList;
+    private Context context;
 
-    public ChiefOrderAdapter(Context context, List<Order> orderList) {
-        this.context = context;
+    public ChiefOrderAdapter(List<Order> orderList, Context context) {
         this.orderList = orderList;
+        this.context = context;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_chief_order,parent,false);
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_chief_order,null);
         return new ViewHolder(view);
     }
 
@@ -73,7 +74,7 @@ public class ChiefOrderAdapter extends RecyclerView.Adapter<ChiefOrderAdapter.Vi
                         @Override
                         public void onResponse(Call<Order> call, Response<Order> response) {
                             Toast.makeText(context, "You have completed an order", Toast.LENGTH_SHORT).show();
-                            Intent intent=new Intent(context, WaiterDashboardActivity.class);
+                            Intent intent=new Intent(context, ChiefDashboardActivity.class);
                             context.startActivity(intent);
                         }
 
@@ -92,6 +93,9 @@ public class ChiefOrderAdapter extends RecyclerView.Adapter<ChiefOrderAdapter.Vi
                 holder.greenCompleted.setVisibility(View.INVISIBLE);
                 holder.Completed.setVisibility(View.VISIBLE);
             }
+        }
+        else {
+            Toast.makeText(context, "Sorry but there are no confirmed orders", Toast.LENGTH_SHORT).show();
         }
 
     }
