@@ -15,12 +15,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.menu_app.ChiefDashboardActivity;
-import com.example.menu_app.LoadingScreenActivity;
-import com.example.menu_app.OrderActivity;
-import com.example.menu_app.OrderSearchActivity;
 import com.example.menu_app.R;
-import com.example.menu_app.WaiterDashboardActivity;
 import com.example.menu_app.adapter.ChiefOrderAdapter;
 import com.example.menu_app.adapter.OrderAdapter;
 import com.example.menu_app.api.OrderAPI;
@@ -40,7 +35,6 @@ import retrofit2.Response;
  */
 public class OrdersFragment extends Fragment {
 
-    ImageView Search;
     RecyclerView recyclerView;
     Button Confirm, Completed;
 
@@ -56,17 +50,8 @@ public class OrdersFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_orders, container, false);
         recyclerView = view.findViewById(R.id.AllOrderRecyclerView);
 
-        Search = view.findViewById(R.id.searchOrder);
         Confirm = view.findViewById(R.id.OrderConfirm);
         Completed = view.findViewById(R.id.OrderCompleted);
-
-        Search.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), OrderSearchActivity.class);
-                startActivity(intent);
-            }
-        });
 
         UsersAPI usersAPI = Url.getInstance().create(UsersAPI.class);
         final Call<Users> usersCall = usersAPI.getUserDetails(Url.token);

@@ -76,6 +76,7 @@
                 android:layout_height="28dp"
                 android:background="@drawable/green_background"
                 android:text="Confirm"
+                android:gravity="center"
                 android:visibility="invisible"
                 android:textColor="@color/white"
                 android:textSize="14dp"
