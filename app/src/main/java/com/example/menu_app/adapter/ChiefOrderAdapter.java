@@ -47,9 +47,7 @@ public class ChiefOrderAdapter extends RecyclerView.Adapter<ChiefOrderAdapter.Vi
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         final Order order = orderList.get(position);
-        Picasso.get().load(Url.base_url_image + orderList.get(position).getFoodImage()).into(holder.FoodImage);
-        holder.FoodName.setText(order.getFoodName());
-        holder.Quantity.setText("Quantity:  " + order.getQuantity());
+
         final String FoodN = order.getFoodName();
         final String FoodI = order.getFoodImage();
         final String Price = order.getPrice();
@@ -59,34 +57,41 @@ public class ChiefOrderAdapter extends RecyclerView.Adapter<ChiefOrderAdapter.Vi
         final boolean confirmed = order.isConfirmed();
         final boolean completed = order.isCompleted();
 
-        holder.Completed.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Order orders = new Order(FoodN,FoodI,Price, Quantity, FullN, TableN, confirmed, true);
-                OrderAPI orderAPI = Url.getInstance().create(OrderAPI.class);
-                Call<Order> listCall = orderAPI.updateOrder(orderList.get(position).getId(), orders);
-                listCall.enqueue(new Callback<Order>() {
-                    @Override
-                    public void onResponse(Call<Order> call, Response<Order> response) {
-                        Toast.makeText(context, "You have completed an order", Toast.LENGTH_SHORT).show();
-                        Intent intent=new Intent(context, WaiterDashboardActivity.class);
-                        context.startActivity(intent);
-                    }
+        if (confirmed == true){
+            Picasso.get().load(Url.base_url_image + orderList.get(position).getFoodImage()).into(holder.FoodImage);
+            holder.FoodName.setText(order.getFoodName());
+            holder.Quantity.setText("Quantity:  " + order.getQuantity());
 
-                    @Override
-                    public void onFailure(Call<Order> call, Throwable t) {
-                        Toast.makeText(context, "Error"+t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                });
+
+            holder.Completed.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Order orders = new Order(FoodN,FoodI,Price, Quantity, FullN, TableN, confirmed, true);
+                    OrderAPI orderAPI = Url.getInstance().create(OrderAPI.class);
+                    Call<Order> listCall = orderAPI.updateOrder(orderList.get(position).getId(), orders);
+                    listCall.enqueue(new Callback<Order>() {
+                        @Override
+                        public void onResponse(Call<Order> call, Response<Order> response) {
+                            Toast.makeText(context, "You have completed an order", Toast.LENGTH_SHORT).show();
+                            Intent intent=new Intent(context, WaiterDashboardActivity.class);
+                            context.startActivity(intent);
+                        }
+
+                        @Override
+                        public void onFailure(Call<Order> call, Throwable t) {
+                            Toast.makeText(context, "Error"+t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+            });
+
+            if (completed == true){
+                holder.Completed.setVisibility(View.INVISIBLE);
+                holder.greenCompleted.setVisibility(View.VISIBLE);
+            } else if ( completed == false){
+                holder.greenCompleted.setVisibility(View.INVISIBLE);
+                holder.Completed.setVisibility(View.VISIBLE);
             }
-        });
-
-        if (completed == true){
-            holder.Completed.setVisibility(View.INVISIBLE);
-            holder.greenCompleted.setVisibility(View.VISIBLE);
-        } else if ( completed == false){
-            holder.greenCompleted.setVisibility(View.INVISIBLE);
-            holder.Completed.setVisibility(View.VISIBLE);
         }
 
     }

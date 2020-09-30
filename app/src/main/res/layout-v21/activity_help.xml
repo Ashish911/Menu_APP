@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/btn_help"
+    tools:context=".HelpActivity">
+
+    <Toolbar
+        android:id="@+id/toolbarSF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme">
+        <ImageButton
+            android:id="@+id/backtoacc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FF6161"
+            app:srcCompat="@drawable/ic_arrow_back_white_24dp"
+            android:layout_marginRight="30dp"/>
+
+        <TextView
+            android:id="@+id/tvApp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/archivo_narrow"
+            android:text="HELP"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:layout_marginLeft="10dp"
+            android:textSize="25dp" />
+    </Toolbar>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="350dp"
+        android:layout_height="450dp"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center"
+        app:cardCornerRadius="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="How to Delete a order from the orders section ?"
+            android:textColor="@color/orange"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/archivo_narrow"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="- There is a cross in the order section."
+            android:textColor="#f45c43"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/archivo_narrow"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="How to confirm an order? "
+            android:textColor="@color/orange"
+            android:layout_marginTop="100dp"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/archivo_narrow"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="- By clicking a confirm button in order section."
+            android:textColor="#f45c43"
+            android:layout_marginTop="140dp"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/archivo_narrow"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="How to complete a order?"
+            android:textColor="@color/orange"
+            android:layout_marginTop="180dp"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/archivo_narrow"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="- By clicking a complete button in order section."
+            android:textColor="#f45c43"
+            android:layout_marginTop="220dp"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/archivo_narrow"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="How to edit profile ?"
+            android:textColor="@color/orange"
+            android:layout_marginTop="260dp"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/archivo_narrow"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="- By clicking of a pen image in account section."
+            android:textColor="#f45c43"
+            android:layout_marginTop="300dp"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/archivo_narrow"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="How to view completed orders ?"
+            android:textColor="@color/orange"
+            android:layout_marginTop="340dp"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/archivo_narrow"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="- By clicking on a completed orders section."
+            android:textColor="#f45c43"
+            android:layout_marginTop="380dp"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/archivo_narrow"
+            android:textSize="18dp"/>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
